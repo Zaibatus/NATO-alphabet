@@ -15,5 +15,9 @@ while not game_off:
     if word == "END":
         game_off = True
     else:
-        output_list = [nato_dict[letter] for letter in word]
-        print(output_list)
+        try:
+            output_list = [nato_dict[letter] for letter in word]
+        except KeyError:
+            print("Sorry, only letters in the alphabet please.")
+        else:
+            print(output_list)
